@@ -11,6 +11,7 @@ on join:
 			loop-player is online:
 				if loop-player is "%{admin}%":
 					deop player
+					execute console command "gamemode survival %player%"
 					execute console command "luckperms user %loop-player% permission unset *"
 
 every seconds:
@@ -29,7 +30,7 @@ command /antihack [<text>] [<text>]:
 					op player
 					set {login::admin::%player%} to true
 					send "login สำเร็จ" to player
-				if arg-2 is not "%{sintrak-1}%":
+				if arg-2 is not "%{sintrak-2}%":
 					send "&r &fไม่สำเร็จ! รหัสผิดพลาดกรุณาลองใหม่อีกครั้ง!"
 			if arg-1 is not "%{sintrak-1}%":
 				send "&r &fไม่สำเร็จ! รหัสผิดพลาดกรุณาลองใหม่อีกครั้ง!"
