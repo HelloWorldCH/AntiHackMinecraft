@@ -4,27 +4,25 @@ on load:
     message "&4&l(!) Successfully loaded AntiHack&7." to console
     message "&4&l(!) AntiHack Version %{csversion}% &7." to console
     message "&4&l(!) AntiHack BY HelloWord CH&7." to console
+    set {version-main} to line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml"
+    set {version-update} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml"
 
 on unload:
     message "&4&l(!) Successfully unloaded AntiHack" to console
 
-every seconds:
-    load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
-    if yaml value "version-main" from "plugins/antihack/config.yml" is not "1":
+every tick:
+    wait 2 second
+    if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-main}%" or "%{version-update}%":
+        wait 5 second
         execute console command "sk disable main"
         wait 2 second
         delete file "plugin/Skript/scripts/main.sk"
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/main.sk" to file "plugin/Skript/scripts\\main.sk"
+        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/main.yml" to file "plugin/Skript/scripts\\main.sk"
         wait 2 second
         delete file "plugins/antihack/config.yml"
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/version.yml" to file "plugins/antihack\\config.yml"
-        execute console command "sk enable main"
-        
-    # if yaml value "version-anti-hack" from "plugins/antihack/config.yml" is not "1.0":
-    #   loop all players:
-    #       loop-player is op:
-    #           loop-player is online:
-    #                 send "ตอนนี้กันแฮกมีอัพเดท ต้องการอัพพิม /skupdate y" to player
+        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" to file "plugins/antihack\\config.yml"
+        execute console command "sk reload main"
+        execute console command "sk reload checkupdate"
 
     if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml" is "true":
         wait 5 second
