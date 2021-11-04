@@ -2,11 +2,11 @@ on load:
     message "&4&l(!) checkupdate AntiHack&7." to console
     wait 3 second
     message "&4&l(!) Successfully loaded AntiHack&7." to console
-	message "&4&l(!) AntiHack Version %{csversion}% &7." to console
+    message "&4&l(!) AntiHack Version %{csversion}% &7." to console
     message "&4&l(!) AntiHack BY HelloWord CH&7." to console
 
 on unload:
-	message "&4&l(!) Successfully unloaded AntiHack" to console
+    message "&4&l(!) Successfully unloaded AntiHack" to console
 
 every seconds:
     load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
@@ -21,9 +21,9 @@ every seconds:
         execute console command "sk load main"
         
     # if yaml value "version-anti-hack" from "plugins/antihack/config.yml" is not "1.0":
-    # 	loop all players:
-	# 	    loop-player is op:
-	# 		    loop-player is online:
+    #   loop all players:
+    #       loop-player is op:
+    #           loop-player is online:
     #                 send "ตอนนี้กันแฮกมีอัพเดท ต้องการอัพพิม /skupdate y" to player
 
     if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml" is "true":
