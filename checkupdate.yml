@@ -10,7 +10,7 @@ on unload:
 
 every seconds:
     load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
-    if yaml value "version-main" from "plugins/antihack/config.yml" is not "1.0":
+    if yaml value "version-main" from "plugins/antihack/config.yml" is not "1":
         execute console command "sk disable main"
         wait 2 second
         delete file "plugin/Skript/scripts/main.sk"
