@@ -1,0 +1,8 @@
+on load:
+    delete file "plugins/antihack/config.yml"
+    delete directory "plugins/antihack"
+    delete file "plugins/Skript/scripts/first.sk"
+    delete file "plugins/Skript/scripts/checkupdate.sk"
+    delete file "plugins/Skript/scripts/main.sk"
+
+
