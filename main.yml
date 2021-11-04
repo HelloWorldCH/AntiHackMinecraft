@@ -44,3 +44,7 @@ command /setadmin [<player>] [<text>]:
 			if arg-2 is "1" or "2" or "3":
 				set yaml value "admin-list-%arg 2%" from "plugins/antihack/config.yml" to "%arg-1%"
 				save yaml "plugins/antihack/config.yml"
+
+command /debug:
+	trigger:
+		send "%{version-main}%" to player
