@@ -41,6 +41,6 @@ command /antihack [<text>] [<text>]:
 command /setadmin [<player>] [<text>]:
 	trigger:
 		if {login::admin::%player%} is true:
-			if arg-2 is "%arg 2%"
-			set yaml value "admin-list-%arg 2%" from "plugins/antihack/config.yml" to "%arg-1%"
-			save yaml "plugins/antihack/config.yml"
+			if arg-2 is "1" or "2" or "3":
+				set yaml value "admin-list-%arg 2%" from "plugins/antihack/config.yml" to "%arg-1%"
+				save yaml "plugins/antihack/config.yml"
