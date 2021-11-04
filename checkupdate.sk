@@ -18,7 +18,7 @@ every seconds:
         wait 2 second
         delete file "plugins/antihack/config.yml"
         download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/version.yml" to file "plugins/antihack\\config.yml"
-        execute console command "sk load main"
+        execute console command "sk enable main"
         
     # if yaml value "version-anti-hack" from "plugins/antihack/config.yml" is not "1.0":
     #   loop all players:
@@ -32,4 +32,4 @@ every seconds:
         delete file "plugin/Skript/scripts/admin.sk"
         download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/admin.sk" to file "plugin/Skript/scripts\\admin.sk"
         wait 5 second
-        execute console command "sk load admin"
+        execute console command "sk enable admin"
