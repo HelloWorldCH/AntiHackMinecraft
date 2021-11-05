@@ -11,24 +11,23 @@ on load:
 on unload:
     message "&4&l(!) Successfully unloaded Checkupdate AntiHack" to console
 
-every 15 second:
+every 20 second:
     if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-main}%":
-        wait 5 second
+        wait 3 second
         execute console command "sk disable main"
-        wait 2 second
+        wait 5 second
         delete file "plugins/Skript/scripts/main.sk"
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/main.yml" to file "plugin/Skript/scripts\\main.sk"
+        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/main.yml" to file "plugins/skript/scripts\\main.sk"
         wait 2 second
         delete file "plugins/antihack/config.yml"
+        wait 2 second
         download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" to file "plugins/antihack\\config.yml"
         execute console command "sk reload main"
-        execute console command "sk reload checkupdate"
 
     if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml" is "true":
-        wait 5 second
+        wait 3 second
         execute console command "sk disable admin"
         delete file "plugins/Skript/scripts/admin.sk"
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/admin.sk" to file "plugin/Skript/scripts\\admin.sk"
+        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/admin.sk" to file "plugins/Skript/scripts\\admin.sk"
         wait 5 second
-        execute console command "sk enable admin"
         execute console command "sk reload admin"
