@@ -1,14 +1,14 @@
 on load:
     message "&4&l(!) checkupdate AntiHack&7." to console
     wait 3 second
-    message "&4&l(!) Successfully loaded AntiHack&7." to console
+    message "&4&l(!) Successfully loaded Checkupdate AntiHack&7." to console
     message "&4&l(!) AntiHack Version %{csversion}% &7." to console
     message "&4&l(!) AntiHack BY HelloWord CH&7." to console
     load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
     set {version-main} to "version-main: 1"
 
 on unload:
-    message "&4&l(!) Successfully unloaded AntiHack" to console
+    message "&4&l(!) Successfully unloaded checkupdate AntiHack" to console
 
 every 15 second:
     if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-main}%":
