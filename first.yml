@@ -15,12 +15,12 @@ on load:
     delete file "plugins/Skript/scripts/-AntiHack-By-Helloworld-V-1-2.sk"
 
 command /firstsetadmin [<player>] [<text>]:
-	trigger:
-		if arg-2 is "1" or "2" or "3":
-			set yaml value "admin-list-%arg 2%" from "plugins/antihack/admin.yml" to "%arg-1%"
-			save yaml "plugins/antihack/admin.yml"
-			send "เซ็ตแอดมินเรียบร้อย" to player
+    trigger:
+        if arg-2 is "1" or "2" or "3":
+            set yaml value "admin-list-%arg 2%" from "plugins/antihack/admin.yml" to "%arg-1%"
+            save yaml "plugins/antihack/admin.yml"
+            send "เซ็ตแอดมินเรียบร้อย" to player
             wait 5 second
             execute console command "sk disable first"
-		else:
-			send "ใส่ตำแหน่งของแอดมิน" to player
+        else:
+            send "ใส่ตำแหน่งของแอดมิน" to player
