@@ -1,6 +1,9 @@
 on script load:
 	load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
-	set {admin} to yaml value "admin-list" from "plugins/antihack/config.yml"
+	load yaml "plugins/antihack/admin.yml" as "plugins/antihack/admin.yml"
+	set {admin-1} to yaml value "admin-list-1" from "plugins/antihack/admin.yml"
+	set {admin-2} to yaml value "admin-list-2" from "plugins/antihack/admin.yml"
+	set {admin-3} to yaml value "admin-list-3" from "plugins/antihack/admin.yml"
 	set {sintrak-1} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {sintrak-2} to line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {login::admin::%player%} to false
@@ -10,6 +13,7 @@ on join:
 		loop-player is op:
 			loop-player is online:
 				if loop-player is "%{admin}%":
+					set {login::admin::%player%} to false
 					deop player
 					execute console command "gamemode survival %player%"
 					execute console command "luckperms user %loop-player% permission unset *"
@@ -19,12 +23,13 @@ every seconds:
 		loop-player is op:
 			loop-player is online:
 				if loop-player is not "%{admin}%":
+					set {login::admin::%player%} to false
 					execute console command "deop %loop-player%"
 					execute console command "luckperms user %loop-player% permission unset *"
 
 command /antihack [<text>] [<text>]:
 	trigger:
-		if player is "%{admin}%":
+		if player is "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
 			if arg-1 is "%{sintrak-1}%":
 				if arg-2 is "%{sintrak-2}%":
 					op player
@@ -39,12 +44,12 @@ command /antihack [<text>] [<text>]:
 		else:
 			send "คุณไม่มีสิทธ์ เข้าถึงคำสั่ง" to player
 
-command /setadmin [<player>] [<text>]:
+command /setadmin [<player>]:
 	trigger:
 		if {login::admin::%player%} is true:
 			if arg-2 is "1" or "2" or "3":
-				set yaml value "admin-list-%arg 2%" from "plugins/antihack/config.yml" to "%arg-1%"
-				save yaml "plugins/antihack/config.yml"
+				set yaml value "admin-list-%arg 2%" from "plugins/antihack/admin.yml" to "%arg-1%"
+				save yaml "plugins/antihack/admin.yml"
 
 command /debug:
 	trigger:
