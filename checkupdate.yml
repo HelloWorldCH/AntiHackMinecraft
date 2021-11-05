@@ -12,9 +12,8 @@ on unload:
 every 20 second:
     if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-main}%":
         wait 3 second
-        execute console command "sk disable main"
-        wait 5 second
         delete file "plugins/Skript/scripts/main.sk"
+        wait 2 second
         download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
         wait 2 second
         delete file "plugins/antihack/config.yml"
