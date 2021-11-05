@@ -23,6 +23,6 @@ command /firstsetadmin [<player>] [<text>]:
             save yaml "plugins/antihack/admin.yml"
             send "เซ็ตแอดมินเรียบร้อย" to player
             wait 5 second
-            execute console command "sk disable first"
+            delete file "plugins/Skript/scripts/first.sk"
         else:
             send "ใส่ตำแหน่งของแอดมิน" to player
