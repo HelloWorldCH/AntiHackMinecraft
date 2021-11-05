@@ -1,5 +1,10 @@
 on load:
     wait 2 second
+	message "&4&l(!) Successfully unloaded Main AntiHack" to console
+    wait 2 second
+	message "&4&l(!) AntiHack Version 1.3 &7." to console
+	message "&4&l(!) AntiHack BY HelloWord CH&7." to console
+    wait 2 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" to file "plugins/antihack\\config.yml"
     wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/checkupdate.yml" to file "plugins/skript/scripts\\checkupdate.sk"
@@ -9,7 +14,7 @@ on load:
     execute console command "sk reload checkupdate"
     wait 2 second
     execute console command "sk reload main"
-    wait 10 second
+    wait 5 second
     delete file "plugins/Skript/scripts/-AntiHack-By-Helloworld-V-1-1.sk"
     execute console command "sk disable first"
 
