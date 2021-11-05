@@ -7,7 +7,7 @@ on script load:
 	set {sintrak-1} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {sintrak-2} to line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {login::admin::%player%} to false
-	set {version-update} to "version-update: 2"
+	set {version-update} to "version-update: 3"
 
 on join:
 	loop all players:
