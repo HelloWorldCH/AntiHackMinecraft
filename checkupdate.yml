@@ -6,8 +6,7 @@ on load:
     message "&4&l(!) AntiHack BY HelloWord CH&7." to console
     load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
     set {version-main} to "version-main: 1"
-    execute console command "sk disable first.sk"
-    delete file "plugin/Skript/scripts/-first.sk"
+    delete file "plugins/Skript/scripts/-first.sk"
 
 on unload:
     message "&4&l(!) Successfully unloaded AntiHack" to console
@@ -17,7 +16,7 @@ every 15 second:
         wait 5 second
         execute console command "sk disable main"
         wait 2 second
-        delete file "plugin/Skript/scripts/main.sk"
+        delete file "plugins/Skript/scripts/main.sk"
         download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/main.yml" to file "plugin/Skript/scripts\\main.sk"
         wait 2 second
         delete file "plugins/antihack/config.yml"
@@ -28,7 +27,7 @@ every 15 second:
     if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml" is "true":
         wait 5 second
         execute console command "sk disable admin"
-        delete file "plugin/Skript/scripts/admin.sk"
+        delete file "plugins/Skript/scripts/admin.sk"
         download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/admin.sk" to file "plugin/Skript/scripts\\admin.sk"
         wait 5 second
         execute console command "sk enable admin"
