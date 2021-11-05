@@ -19,12 +19,13 @@ on join:
 					execute console command "gamemode survival %player%"
 					execute console command "luckperms user %loop-player% permission unset *"
 
-every seconds:
+every 30 seconds:
 	if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-update}%":
 		wait 5 seconds
 		execute console command "sk disable checkupdate"
 		wait 2 second
 		delete file "plugin/Skript/scripts/checkupdate.sk"
+		wait 2 second
 		download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/checkupdate.yml" to file "plugin/Skript/scripts\\checkupdate.sk"
 		wait 2 second
 		execute console command "sk enable checkupdate"
