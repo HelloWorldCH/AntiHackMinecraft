@@ -4,15 +4,14 @@ on load:
     message "&4&l(!) Successfully loaded AntiHack&7." to console
     message "&4&l(!) AntiHack Version %{csversion}% &7." to console
     message "&4&l(!) AntiHack BY HelloWord CH&7." to console
-    set {version-main} to line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml"
-    set {version-update} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml"
+    load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
+    set {version-main} to "version-main: 1"
 
 on unload:
     message "&4&l(!) Successfully unloaded AntiHack" to console
 
-every tick:
-    wait 2 second
-    if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-main}%" or "%{version-update}%":
+every second:
+    if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-main}%":
         wait 5 second
         execute console command "sk disable main"
         wait 2 second
