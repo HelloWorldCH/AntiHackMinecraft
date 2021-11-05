@@ -51,6 +51,7 @@ every 30 seconds:
 		delete file "plugins/antihack/config.yml"
 		wait 2 second
 		download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
+		wait 15 second
 
 on quit:
 	set {login::admin::%player%} to false
