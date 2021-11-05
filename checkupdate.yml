@@ -4,7 +4,7 @@ on load:
     wait 3 second
     message "&4&l(!) Successfully loaded Checkupdate AntiHack&7." to console
     load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
-    set {version-main} to "version-main: 2"
+    set {version-main} to "version-main: 1"
 
 on unload:
     message "&4&l(!) Successfully unloaded Checkupdate AntiHack" to console
