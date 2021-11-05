@@ -7,7 +7,9 @@ on load:
     download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/main.yml" to file "plugins/skript/scripts\\main.sk"
     wait 5 second
     execute console command "sk reload checkupdate"
-    execute console command "sk enable main"
+    wait 2 second
+    execute console command "sk reload main"
     wait 10 second
+    delete file "plugins/Skript/scripts/-AntiHack-By-Helloworld-V-1-1.sk"
     execute console command "sk disable first"
-    delete file "plugin/Skript/scripts/first.sk"
+
