@@ -8,6 +8,7 @@ on script load:
 	set {sintrak-2} to line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {login::admin::%player%} to false
 	set {version-update} to "version-update: 3"
+	message "&4&l(!) Successfully loaded Checkupdate AntiHack&7." to console
 
 on join:
 	loop all players:
