@@ -2,7 +2,7 @@ on load:
     wait 2 second
 	message "&4&l(!) Successfully unloaded Main AntiHack" to console
     wait 2 second
-	message "&4&l(!) AntiHack Version 1.3 &7." to console
+message "&4&l(!) AntiHack Version 1.3 &7." to console
 	message "&4&l(!) AntiHack BY HelloWord CH&7." to console
     wait 2 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" to file "plugins/antihack\\config.yml"
