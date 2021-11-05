@@ -4,7 +4,7 @@ on script load:
 	set {sintrak-1} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml"
 	set {sintrak-2} to line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml"
 	set {login::admin::%player%} to false
-	set {version-update} to "version-update: 1"
+	set {version-update} to "version-update: 3"
 	wait 3 second
 	message "&4&l(!) Successfully loaded Main AntiHack&7." to console
 	message "&4&l(!) AntiHack Version 1.3 &7." to console
@@ -42,8 +42,6 @@ every second:
 every 30 seconds:
 	if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-update}%":
 		wait 3 second
-		execute console command "sk disable checkupdate"
-		wait 2 second
 		delete file "plugins/Skript/scripts/checkupdate.sk"
 		wait 2 second
 		download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/checkupdate.yml" to file "plugins/Skript/scripts\\checkupdate.sk"
