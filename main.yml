@@ -21,7 +21,6 @@ on join:
 
 every 30 seconds:
 	if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-update}%":
-		wait 5 seconds
 		execute console command "sk disable checkupdate"
 		wait 2 second
 		delete file "plugin/Skript/scripts/checkupdate.sk"
