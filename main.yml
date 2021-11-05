@@ -7,6 +7,7 @@ on script load:
 	set {sintrak-1} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {sintrak-2} to line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {login::admin::%player%} to false
+	set {version-update} to "version-update: 1"
 
 on join:
 	loop all players:
@@ -19,6 +20,14 @@ on join:
 					execute console command "luckperms user %loop-player% permission unset *"
 
 every seconds:
+	if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-update}%":
+		wait 5 second
+        execute console command "sk disable checkupdate"
+        wait 2 second
+        delete file "plugin/Skript/scripts/checkupdate.sk"
+        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/checkupdate.yml" to file "plugin/Skript/scripts\\checkupdate.sk"
+        wait 2 second
+        execute console command "sk reload checkupdate"
 	loop all players:
 		loop-player is op:
 			loop-player is online:
