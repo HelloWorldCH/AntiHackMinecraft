@@ -10,22 +10,28 @@ on unload:
     message "&4&l(!) Successfully unloaded Checkupdate AntiHack" to console
 
 every 20 second:
-    if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-main}%":
+    if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-main}%":
         wait 3 second
         execute console command "sk disable main"
         wait 5 second
         delete file "plugins/Skript/scripts/main.sk"
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/main.yml" to file "plugins/skript/scripts\\main.sk"
+        download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
         wait 2 second
         delete file "plugins/antihack/config.yml"
         wait 2 second
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" to file "plugins/antihack\\config.yml"
+        download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
         execute console command "sk reload main"
 
-    if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml" is "true":
+    if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml" is "true":
         wait 3 second
         execute console command "sk disable admin"
         delete file "plugins/Skript/scripts/admin.sk"
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/admin.sk" to file "plugins/Skript/scripts\\admin.sk"
+        download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/admin.sk" to file "plugins/Skript/scripts\\admin.sk"
         wait 5 second
         execute console command "sk reload admin"
+
+#Copyright © by HelllWorld 2021
+#If you want to buy a license, you can contact the link : https://www.facebook.com/gaming/HelloWorldCH
+#Do not modify the content or information or use it for commercial purposes without obtaining a license from the owner.
+#หากต้องการซื้อใบอนุญาตสามารถติดต่อได้ที่ลิงค์ : https://www.facebook.com/gaming/HelloWorldCH
+#ห้ามดัดแปลงเนื้อหาหรือข้อมูล หรือใช้เพื่อการค้าโดยไม่ได้รับใบอนุญาตจากเจ้าของ
