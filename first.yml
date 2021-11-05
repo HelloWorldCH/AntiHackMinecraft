@@ -1,5 +1,7 @@
 on load:
+    load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
     wait 2 second
+    delete file "plugins/antihack/config.yml"
     message "&4&l(!) Successfully loaded First AntiHack" to console
     wait 2 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" to file "plugins/antihack\\config.yml"
