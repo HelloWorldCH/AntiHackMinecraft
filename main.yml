@@ -70,3 +70,6 @@ command /setadmin [<player>] [<text>]:
 command /debug:
 	trigger:
 		send "%{version-main}%" to player
+		
+on unload:
+    message "&4&l(!) Successfully unloaded Main AntiHack" to console
