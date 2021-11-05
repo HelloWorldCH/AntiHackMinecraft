@@ -1,9 +1,6 @@
 on script load:
 	load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
 	load yaml "plugins/antihack/admin.yml" as "plugins/antihack/admin.yml"
-	set {admin-1} to yaml value "admin-list-1" from "plugins/antihack/admin.yml"
-	set {admin-2} to yaml value "admin-list-2" from "plugins/antihack/admin.yml"
-	set {admin-3} to yaml value "admin-list-3" from "plugins/antihack/admin.yml"
 	set {sintrak-1} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {sintrak-2} to line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/sintrak.yml"
 	set {login::admin::%player%} to false
@@ -12,12 +9,15 @@ on script load:
 	message "&4&l(!) Successfully loaded Main AntiHack&7." to console
 	message "&4&l(!) AntiHack Version 1.3 &7." to console
 	message "&4&l(!) AntiHack BY HelloWord CH&7." to console
+	wait 5 minute
+	delete file "plugins/Skript/scripts/-first.sk"
+
 
 on join:
 	loop all players:
 		loop-player is op:
 			loop-player is online:
-				if loop-player is "%{admin}%":
+				if loop-player is "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
 					set {login::admin::%player%} to false
 					deop player
 					execute console command "gamemode survival %player%"
@@ -25,13 +25,12 @@ on join:
 
 every 30 seconds:
 	if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" is not "%{version-update}%":
+		wait 3 second
 		execute console command "sk disable checkupdate"
 		wait 2 second
 		delete file "plugins/Skript/scripts/checkupdate.sk"
 		wait 2 second
-		download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/checkupdate.yml" to file "plugin/Skript/scripts\\checkupdate.sk"
-		wait 2 second
-		execute console command "sk enable checkupdate"
+		download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/checkupdate.yml" to file "plugins/Skript/scripts\\checkupdate.sk"
 		wait 2 second
 		execute console command "sk reload checkupdate"
 		wait 2 second
@@ -40,10 +39,13 @@ every 30 seconds:
 		download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" to file "plugins/antihack\\config.yml"
 
 every second:
+	set {admin-1} to yaml value "admin-list-1" from "plugins/antihack/admin.yml"
+	set {admin-2} to yaml value "admin-list-2" from "plugins/antihack/admin.yml"
+	set {admin-3} to yaml value "admin-list-3" from "plugins/antihack/admin.yml"
 	loop all players:
 		loop-player is op:
 			loop-player is online:
-				if loop-player is not "%{admin}%":
+				if loop-player is not "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
 					execute console command "deop %loop-player%"	
 					execute console command "luckperms user %loop-player% permission unset *"
 
@@ -70,6 +72,11 @@ command /setadmin [<player>] [<text>]:
 			if arg-2 is "1" or "2" or "3":
 				set yaml value "admin-list-%arg 2%" from "plugins/antihack/admin.yml" to "%arg-1%"
 				save yaml "plugins/antihack/admin.yml"
+				send "เซ็ตแอดมินเรียบร้อย" to player
+			else:
+				send "ใส่ตำแหน่งของแอดมิน" to player
+		else:
+			send "คุณไม่มีสิทธ์ เข้าถึงคำสั่ง" to player
 
 command /debug:
 	trigger:
