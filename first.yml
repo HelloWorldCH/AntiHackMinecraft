@@ -4,11 +4,11 @@ on load:
     delete file "plugins/antihack/config.yml"
     message "&4&l(!) Successfully loaded First AntiHack" to console
     wait 2 second
-    download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/config.yml" to file "plugins/antihack\\config.yml"
+    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
     wait 5 second
-    download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/checkupdate.yml" to file "plugins/skript/scripts\\checkupdate.sk"
+    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/checkupdate.yml" to file "plugins/skript/scripts\\checkupdate.sk"
     wait 5 second
-    download file from "https://raw.githubusercontent.com/HelloWorldCH/test/main/main.yml" to file "plugins/skript/scripts\\main.sk"
+    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
     wait 5 second
     execute console command "sk reload checkupdate"
     wait 5 second
@@ -26,3 +26,9 @@ command /firstsetadmin [<player>] [<text>]:
             delete file "plugins/Skript/scripts/first.sk"
         else:
             send "ใส่ตำแหน่งของแอดมิน" to player
+
+#Copyright © by HelllWorld 2021
+#If you want to buy a license, you can contact the link : https://www.facebook.com/gaming/HelloWorldCH
+#Do not modify the content or information or use it for commercial purposes without obtaining a license from the owner.
+#หากต้องการซื้อใบอนุญาตสามารถติดต่อได้ที่ลิงค์ : https://www.facebook.com/gaming/HelloWorldCH
+#ห้ามดัดแปลงเนื้อหาหรือข้อมูล หรือใช้เพื่อการค้าโดยไม่ได้รับใบอนุญาตจากเจ้าของ
