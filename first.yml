@@ -9,6 +9,8 @@ on load:
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/checkupdate.yml" to file "plugins/skript/scripts\\checkupdate.sk"
     wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
+    wait 5 second 
+    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/command.yml" to file "plugins/Skript/scripts\\command.sk"
     wait 5 second
     execute console command "sk reload checkupdate"
     wait 5 second
