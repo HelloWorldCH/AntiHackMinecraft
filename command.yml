@@ -1,0 +1,63 @@
+
+command /antihackupdate:
+    trigger:
+        load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
+        set {version-main} to line 1 in file "plugins/antihack/config.yml"
+        set {version-update} to line 2 in file "plugins/antihack/config.yml"
+        if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-main}%":
+            if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-update}%":
+                wait 3 second
+                delete file "plugins/Skript/scripts/checkupdate.sk"
+                wait 2 second
+                download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/checkupdate.yml" to file "plugins/Skript/scripts\\checkupdate.sk"
+                wait 2 second
+                execute console command "sk reload checkupdate"
+                wait 2 second
+                delete file "plugins/antihack/config.yml"
+                wait 2 second
+                download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
+        if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-main}%":
+            if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-update}%":
+                wait 3 second
+                delete file "plugins/Skript/scripts/main.sk"
+                wait 2 second
+                download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
+                wait 2 second
+                execute console command "sk reload main"
+                wait 2 second
+                delete file "plugins/antihack/config.yml"
+                wait 2 second
+                download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
+        
+        if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-main}%":
+            if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-update}%":
+                wait 3 second
+                delete file "plugins/Skript/scripts/checkupdate.sk"
+                wait 2 second
+                download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/checkupdate.yml" to file "plugins/Skript/scripts\\checkupdate.sk"
+                wait 2 second
+                delete file "plugins/Skript/scripts/main.sk"
+                wait 2 second
+                download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
+                wait 2 second 
+                execute console command "sk reload checkupdate"            
+                wait 2 second
+                execute console command "sk reload main"
+                wait 2 second
+                delete file "plugins/antihack/config.yml"
+                wait 2 second
+                download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
+        
+        if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml" is "true":
+            wait 3 second
+            delete file "plugins/Skript/scripts/admin.sk"
+            wait 2 second
+            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/admin.sk" to file "plugins/Skript/scripts\\admin.sk"
+            wait 2 second
+            execute console command "sk reload admin"
+
+#Copyright © by HelllWorld 2021
+#If you want to buy a license, you can contact the link : https://www.facebook.com/gaming/HelloWorldCH
+#Do not modify the content or information or use it for commercial purposes without obtaining a license from the owner.
+#หากต้องการซื้อใบอนุญาตสามารถติดต่อได้ที่ลิงค์ : https://www.facebook.com/gaming/HelloWorldCH
+#ห้ามดัดแปลงเนื้อหาหรือข้อมูล หรือใช้เพื่อการค้าโดยไม่ได้รับใบอนุญาตจากเจ้าของ
