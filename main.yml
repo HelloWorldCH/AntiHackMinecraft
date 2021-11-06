@@ -29,7 +29,7 @@ every second:
 				if loop-player is "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
 					execute console command "antihackdeop %loop-player%"
 
-every second:
+every 10 second:
 	set {admin-1} to yaml value "admin-list-1" from "plugins/antihack/admin.yml"
 	set {admin-2} to yaml value "admin-list-2" from "plugins/antihack/admin.yml"
 	set {admin-3} to yaml value "admin-list-3" from "plugins/antihack/admin.yml"
