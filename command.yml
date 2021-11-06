@@ -1,4 +1,3 @@
-
 command /antihackupdate:
     trigger:
         load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
