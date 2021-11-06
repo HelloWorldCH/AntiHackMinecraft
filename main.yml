@@ -19,7 +19,7 @@ on join:
 					execute console command "gamemode survival %player%"
 					execute console command "luckperms user %loop-player% permission unset *"
 
-every 10 second:
+every second:
     execute console command "antihackupdate"
 
 every second:
