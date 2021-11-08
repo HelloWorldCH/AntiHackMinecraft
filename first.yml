@@ -7,22 +7,26 @@ on load:
     delete file "plugins/antihack/message/En.yml"
     delete file "plugins/antihack/message/Th.yml"
     wait 2 second
-    message "&4&l(!) loaded First AntiHack" to console
+    message "&4&l(!) loading First AntiHack" to console
     wait 2 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
-    message "&4&l(!) loaded Config AntiHack" to console
+    message "&4&l(!) loading Config AntiHack" to console
+    wait 2 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/message/Th.yml" to file "plugins/antihack/message\\Th.yml"
-    message "&4&l(!) loaded Message AntiHack" to console
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/message/En.yml" to file "plugins/antihack/message\\En.yml"
+    message "&4&l(!) loading Message AntiHack" to console
     wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrack.yml" to file "plugins/skript/scripts\\sintrack.sk"
-    message "&4&l(!) loaded Sintrack AntiHack" to console
+    message "&4&l(!) loading Sintrack AntiHack" to console
+    wait 5 second
+    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/command.yml" to file "plugins/skript/scripts\\command.sk"
+    message "&4&l(!) loading Command AntiHack" to console
     wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/checkupdate.yml" to file "plugins/skript/scripts\\checkupdate.sk"
-    message "&4&l(!) loaded Checkupdate AntiHack" to console
+    message "&4&l(!) loading Checkupdate AntiHack" to console
     wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
-    message "&4&l(!) loaded Main AntiHack" to console
+    message "&4&l(!) loading Main AntiHack" to console
     wait 5 second
     execute console command "sk reload sintrack"
     wait 5 second
