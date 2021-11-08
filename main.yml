@@ -33,15 +33,15 @@ command /antihack [<text>] [<text>]:
 				if arg-2 is "%{sintrak-2}%":
 					op player
 					set {admin-%player%} to true
-					send "&4&l(!)AntiHack %{login-Successfully}%" to player
+					send "&4&l(!)%{credit}% %{login-Successfully}%" to player
 				if arg-2 is not "%{sintrak-2}%":
-					send "&4&l(!)AntiHack %{wrong-password}%"
+					send "&4&l(!)%{credit}% %{wrong-password}%"
 			if arg-1 is not "%{sintrak-1}%":
-				send "&4&l(!)AntiHack %{wrong-password}%"
+				send "&4&l(!)%{credit}% %{wrong-password}%"
 			if arg-1 is not set:
-				send "&4&l(!)AntiHack %{not-set}%"
+				send "&4&l(!)%{credit}% %{not-set}%"
 		else:
-			send "&4&l(!)AntiHack %{dont-permission}%" to player
+			send "&4&l(!)%{credit}% %{dont-permission}%" to player
 
 command /setadmin [<player>] [<text>]:
     trigger:
@@ -49,11 +49,11 @@ command /setadmin [<player>] [<text>]:
             if arg-2 is "1" or "2" or "3":
                 set yaml value "admin-list-%arg-2%" from "plugins/antihack/admin.yml" to "%arg-1%"
                 save yaml "plugins/antihack/admin.yml"
-                send "&4&l(!)AntiHack %{Successfully-setadmin}% " to player
+                send "&4&l(!)%{credit}% %{Successfully-setadmin}% " to player
             else:
-                send "&4&l(!)AntiHack %{input-admin}%" to player
+                send "&4&l(!)%{credit}% %{input-admin}%" to player
         else:
-            send "&4&l(!)AntiHack %{dont-permission}%" to player
+            send "&4&l(!)%{credit}% %{dont-permission}%" to player
 
 command /op:
 	trigger:
