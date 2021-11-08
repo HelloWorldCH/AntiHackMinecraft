@@ -40,8 +40,12 @@ command /antihack [<text>] [<text>]:
 				send "&4&l(!)%{credit}% %{wrong-password}%"
 			if arg-1 is not set:
 				send "&4&l(!)%{credit}% %{not-set}%"
+			if arg-1 is "reload":
+				execute console command "sk reload sintrack"
 		else:
 			send "&4&l(!)%{credit}% %{dont-permission}%" to player
+
+
 
 command /setadmin [<player>] [<text>]:
     trigger:
