@@ -13,9 +13,13 @@ on load:
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/message/Th.yml" to file "plugins/antihack/message\\Th.yml"
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/message/En.yml" to file "plugins/antihack/message\\En.yml"
     wait 5 second
+    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrack.yml" to file "plugins/skript/scripts\\sintrack.sk"
+    wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/checkupdate.yml" to file "plugins/skript/scripts\\checkupdate.sk"
     wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
+    wait 5 second
+    execute console command "sk reload sintrack"
     wait 5 second
     execute console command "sk reload checkupdate"
     wait 5 second
