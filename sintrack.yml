@@ -1,0 +1,75 @@
+on load:
+	wait 3 second
+	message "&4&l(!) Successfully loaded Main AntiHack&7." to console
+	message "&4&l(!) AntiHack Version 1.3 &7." to console
+	message "&4&l(!) AntiHack BY HelloWord CH&7." to console
+
+on join:
+	loop all players:
+		loop-player is op:
+			loop-player is online:
+				if loop-player is "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
+					set {admin-%player%} to false
+					deop player
+					execute console command "gamemode survival %player%"
+					execute console command "luckperms user %loop-player% permission unset *"
+
+every 10 second:
+    execute console command "antihackupdate"
+
+every second:
+	loop all players:
+		loop-player is op:
+			loop-player is online:
+				if loop-player is not "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
+					execute console command "deop %loop-player%"
+					execute console command "gamemode survival %loop-player%"	
+					execute console command "luckperms user %loop-player% permission unset *"
+
+command /antihack [<text>] [<text>]:
+	trigger:
+		if player is "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
+			if arg-1 is "%{sintrak-1}%":
+				if arg-2 is "%{sintrak-2}%":
+					op player
+					set {admin-%player%} to true
+					send "&4&l(!)%{credit}% %{login-Successfully}%" to player
+				if arg-2 is not "%{sintrak-2}%":
+					send "&4&l(!)%{credit}% %{wrong-password}%"
+			if arg-1 is not "%{sintrak-1}%":
+				send "&4&l(!)%{credit}% %{wrong-password}%"
+			if arg-1 is not set:
+				send "&4&l(!)%{credit}% %{not-set}%"
+		else:
+			send "&4&l(!)%{credit}% %{dont-permission}%" to player
+
+command /setadmin [<player>] [<text>]:
+    trigger:
+        if {admin-%player%} is true:
+            if arg-2 is "1" or "2" or "3":
+                set yaml value "admin-list-%arg-2%" from "plugins/antihack/admin.yml" to "%arg-1%"
+                save yaml "plugins/antihack/admin.yml"
+                send "&4&l(!)%{credit}% %{Successfully-setadmin}% " to player
+            else:
+                send "&4&l(!)%{credit}% %{input-admin}%" to player
+        else:
+            send "&4&l(!)%{credit}% %{dont-permission}%" to player
+
+command /op:
+	trigger:
+		send "ไอควายจะใช้ทำไม" to player
+		message "&4&l(!) AntiHack KUY." to console
+
+on quit:
+	set {admin-%player%} to false
+	
+on unload:
+	message "&4&l(!) Successfully unloaded Main AntiHack" to console
+	message "&4&l(!) AntiHack Version 1.3 &7." to console
+	message "&4&l(!) AntiHack BY HelloWord CH&7." to console
+
+#Copyright © by HelllWorld 2021
+#If you want to buy a license, you can contact the link : https://www.facebook.com/gaming/HelloWorldCH
+#Do not modify the content or information or use it for commercial purposes without obtaining a license from the owner.
+#หากต้องการซื้อใบอนุญาตสามารถติดต่อได้ที่ลิงค์ : https://www.facebook.com/gaming/HelloWorldCH
+#ห้ามดัดแปลงเนื้อหาหรือข้อมูล หรือใช้เพื่อการค้าโดยไม่ได้รับใบอนุญาตจากเจ้าของ
