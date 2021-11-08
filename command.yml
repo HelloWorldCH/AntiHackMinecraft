@@ -1,8 +1,5 @@
 command /antihackupdate:
     trigger:
-        load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
-        set {version-main} to line 3 in file "plugins/antihack/config.yml"
-        set {version-update} to line 4 in file "plugins/antihack/config.yml"
         if line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-main}%":
             if line 4 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-update}%":
                 wait 3 second
