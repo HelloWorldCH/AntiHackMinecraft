@@ -30,6 +30,8 @@ on load:
     wait 5 second
     execute console command "sk reload sintrack"
     wait 5 second
+    execute console command "sk reload command"
+    wait 5 second
     execute console command "sk reload checkupdate"
     wait 5 second
     execute console command "sk reload main"
@@ -49,6 +51,9 @@ command /firstsetadmin [<player>] [<text>]:
         else:
             send "ใส่ตำแหน่งของแอดมิน" to player
 
+command /bug:
+    trigger:
+        send "%{version-main}%%{version-update}%%{version-command}%" to player
 #Copyright © by HelllWorld 2021
 #If you want to buy a license, you can contact the link : https://www.facebook.com/gaming/HelloWorldCH
 #Do not modify the content or information or use it for commercial purposes without obtaining a license from the owner.
