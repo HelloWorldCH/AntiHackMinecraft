@@ -1,9 +1,4 @@
 on load:
-	load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
-	load yaml "plugins/antihack/admin.yml" as "plugins/antihack/admin.yml"
-	set {sintrak-1} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml"
-	set {sintrak-2} to line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml"
-	set {admin-%player%} to false
 	wait 3 second
 	message "&4&l(!) Successfully loaded Main AntiHack&7." to console
 	message "&4&l(!) AntiHack Version 1.3 &7." to console
@@ -23,9 +18,6 @@ every 10 second:
     execute console command "antihackupdate"
 
 every second:
-	set {admin-1} to yaml value "admin-list-1" from "plugins/antihack/admin.yml"
-	set {admin-2} to yaml value "admin-list-2" from "plugins/antihack/admin.yml"
-	set {admin-3} to yaml value "admin-list-3" from "plugins/antihack/admin.yml"
 	loop all players:
 		loop-player is op:
 			loop-player is online:
@@ -41,15 +33,15 @@ command /antihack [<text>] [<text>]:
 				if arg-2 is "%{sintrak-2}%":
 					op player
 					set {admin-%player%} to true
-					send "&4&l(!)AntiHack&7 login Successfully" to player
+					send "&4&l(!)AntiHack %{login-Successfully}%" to player
 				if arg-2 is not "%{sintrak-2}%":
-					send "&4&l(!)AntiHack&7 &r &fไม่สำเร็จ! รหัสผิดพลาดกรุณาลองใหม่อีกครั้ง!"
+					send "&4&l(!)AntiHack %{wrong-password}%"
 			if arg-1 is not "%{sintrak-1}%":
-				send "&4&l(!)AntiHack&7 &r &fไม่สำเร็จ! รหัสผิดพลาดกรุณาลองใหม่อีกครั้ง!"
+				send "&4&l(!)AntiHack %{wrong-password}%"
 			if arg-1 is not set:
-				send "&4&l(!)AntiHack&7 &r &fคำสั่ง /antihack <รหัสผ่านในดิส>"
+				send "&4&l(!)AntiHack %{not-set}%"
 		else:
-			send "&4&l(!)AntiHack&7 คุณไม่มีสิทธ์ เข้าถึงคำสั่ง" to player
+			send "&4&l(!)AntiHack %{dont-permission}%" to player
 
 command /setadmin [<player>] [<text>]:
     trigger:
@@ -57,11 +49,11 @@ command /setadmin [<player>] [<text>]:
             if arg-2 is "1" or "2" or "3":
                 set yaml value "admin-list-%arg-2%" from "plugins/antihack/admin.yml" to "%arg-1%"
                 save yaml "plugins/antihack/admin.yml"
-                send "&4&l(!)AntiHack&7 เซ็ตแอดมินเรียบร้อย" to player
+                send "&4&l(!)AntiHack %{Successfully-setadmin}% " to player
             else:
-                send "&4&l(!)AntiHack&7 ใส่ตำแหน่งของแอดมิน 1-3" to player
+                send "&4&l(!)AntiHack %{input-admin}%" to player
         else:
-            send "&4&l(!)AntiHack&7 คุณไม่มีสิทธ์ เข้าถึงคำสั่ง" to player
+            send "&4&l(!)AntiHack %{dont-permission}%" to player
 
 command /op:
 	trigger:
