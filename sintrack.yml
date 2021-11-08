@@ -1,12 +1,12 @@
 on load:
-    if yaml value "language-lang" is "Th"
+    if yaml value "language-lang" from "plugins/antihack/config.yml" is "Th":
         set {successfully-setadmin} to yaml value "messages.successfully-setadmin" from "plugins/antihack/message/Th.yml"
         set {login-successfully} to yaml value "messages.login-successfully" from "plugins/antihack/message/Th.yml"
         set {dont-permission} to yaml value "messages.dont-permission" from "plugins/antihack/message/Th.yml"
         set {wrong-password} to yaml value "messages.wrong-password" from "plugins/antihack/message/Th.yml"
         set {input-admin} to yaml value "messages.input-admin" from "plugins/antihack/message/Th.yml"
         set {not-set} to yaml value "messages.not-set" from "plugins/antihack/message/Th.yml" 
-    if yaml value "language-lang" is "En"
+    if yaml value "language-lang" from "plugins/antihack/config.yml" is "En":
         set {successfully-setadmin} to yaml value "messages.successfully-setadmin" from "plugins/antihack/message/En.yml"
         set {login-successfully} to yaml value "messages.login-successfully" from "plugins/antihack/message/En.yml"
         set {dont-permission} to yaml value "messages.dont-permission" from "plugins/antihack/message/En.yml"
