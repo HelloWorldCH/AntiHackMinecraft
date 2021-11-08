@@ -7,7 +7,7 @@ on load:
     delete file "plugins/antihack/message/En.yml"
     delete file "plugins/antihack/message/Th.yml"
     wait 2 second
-    message "&4&l(!) Successfully loaded First AntiHack" to console
+    message "&4&l(!) loaded First AntiHack" to console
     wait 2 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/message/Th.yml" to file "plugins/antihack/message\\Th.yml"
@@ -26,6 +26,8 @@ on load:
     execute console command "sk reload main"
     wait 5 second
     delete file "plugins/Skript/scripts/-AntiHack-By-Helloworld-V-1-2.sk"
+    wait 2 second
+    message "&4&l(!) loaded First AntiHack" to console
 
 command /firstsetadmin [<player>] [<text>]:
     trigger:
