@@ -1,18 +1,18 @@
 on load:
     if yaml value "language-lang" from "plugins/antihack/config.yml" is "Th":
-        set {successfully-setadmin} to yaml value "messages.successfully-setadmin" from "plugins/antihack/message/Th.yml"
-        set {login-successfully} to yaml value "messages.login-successfully" from "plugins/antihack/message/Th.yml"
-        set {dont-permission} to yaml value "messages.dont-permission" from "plugins/antihack/message/Th.yml"
-        set {wrong-password} to yaml value "messages.wrong-password" from "plugins/antihack/message/Th.yml"
-        set {input-admin} to yaml value "messages.input-admin" from "plugins/antihack/message/Th.yml"
-        set {not-set} to yaml value "messages.not-set" from "plugins/antihack/message/Th.yml" 
+        set {successfully-setadmin} to yaml value "Messages.successfully-setadmin" from "plugins/antihack/message/Th.yml"
+        set {login-successfully} to yaml value "Messages.login-successfully" from "plugins/antihack/message/Th.yml"
+        set {dont-permission} to yaml value "Messages.dont-permission" from "plugins/antihack/message/Th.yml"
+        set {wrong-password} to yaml value "Messages.wrong-password" from "plugins/antihack/message/Th.yml"
+        set {input-admin} to yaml value "Messages.input-admin" from "plugins/antihack/message/Th.yml"
+        set {not-set} to yaml value "Messages.not-set" from "plugins/antihack/message/Th.yml" 
     if yaml value "language-lang" from "plugins/antihack/config.yml" is "En":
-        set {successfully-setadmin} to yaml value "messages.successfully-setadmin" from "plugins/antihack/message/En.yml"
-        set {login-successfully} to yaml value "messages.login-successfully" from "plugins/antihack/message/En.yml"
-        set {dont-permission} to yaml value "messages.dont-permission" from "plugins/antihack/message/En.yml"
-        set {wrong-password} to yaml value "messages.wrong-password" from "plugins/antihack/message/En.yml"
-        set {input-admin} to yaml value "messages.input-admin" from "plugins/antihack/message/En.yml"
-        set {not-set} to yaml value "messages.not-set" from "plugins/antihack/message/En.yml" 
+        set {successfully-setadmin} to yaml value "Messages.successfully-setadmin" from "plugins/antihack/message/En.yml"
+        set {login-successfully} to yaml value "Messages.login-successfully" from "plugins/antihack/message/En.yml"
+        set {dont-permission} to yaml value "Messages.dont-permission" from "plugins/antihack/message/En.yml"
+        set {wrong-password} to yaml value "Messages.wrong-password" from "plugins/antihack/message/En.yml"
+        set {input-admin} to yaml value "Messages.input-admin" from "plugins/antihack/message/En.yml"
+        set {not-set} to yaml value "Messages.not-set" from "plugins/antihack/message/En.yml" 
 
 every second:
     load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
