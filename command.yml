@@ -1,10 +1,10 @@
 command /antihackupdate:
     trigger:
         load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
-        set {version-main} to line 1 in file "plugins/antihack/config.yml"
-        set {version-update} to line 2 in file "plugins/antihack/config.yml"
-        if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-main}%":
-            if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-update}%":
+        set {version-main} to line 3 in file "plugins/antihack/config.yml"
+        set {version-update} to line 4 in file "plugins/antihack/config.yml"
+        if line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-main}%":
+            if line 4 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-update}%":
                 wait 3 second
                 delete file "plugins/Skript/scripts/checkupdate.sk"
                 wait 2 second
@@ -15,8 +15,8 @@ command /antihackupdate:
                 delete file "plugins/antihack/config.yml"
                 wait 2 second
                 download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
-        if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-main}%":
-            if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-update}%":
+        if line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-main}%":
+            if line 4 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-update}%":
                 wait 3 second
                 delete file "plugins/Skript/scripts/main.sk"
                 wait 2 second
@@ -28,8 +28,8 @@ command /antihackupdate:
                 wait 2 second
                 download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
         
-        if line 1 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-main}%":
-            if line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-update}%":
+        if line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-main}%":
+            if line 4 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-update}%":
                 wait 3 second
                 delete file "plugins/Skript/scripts/checkupdate.sk"
                 wait 2 second
@@ -54,6 +54,14 @@ command /antihackupdate:
             download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/admin.sk" to file "plugins/Skript/scripts\\admin.sk"
             wait 2 second
             execute console command "sk reload admin"
+
+command /antihack [<text>]:
+    trigger:
+        if player is "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
+            if arg-1 is "reload":
+                execute console command "sk reload sintrack"
+        else:
+            send "&4&l(!)%{credit}% %{dont-permission}%" to player
 
 #Copyright © by HelllWorld 2021
 #If you want to buy a license, you can contact the link : https://www.facebook.com/gaming/HelloWorldCH
