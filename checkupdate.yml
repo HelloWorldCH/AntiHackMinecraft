@@ -6,7 +6,7 @@ on load:
 
 every 10 second:
     execute console command "antihackupdate"
-    set {version-command} to line 3 in file "plugins/antihack/config.yml" 
+    set {version-command} to line 5 in file "plugins/antihack/config.yml" 
     if line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-command}%":
         wait 3 second
         delete file "plugins/Skript/scripts/command.sk"
