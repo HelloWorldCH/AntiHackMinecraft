@@ -1,0 +1,7 @@
+Messages:
+    wrong-password: "&7 &r &fไม่สำเร็จ! รหัสผิดพลาดกรุณาลองใหม่อีกครั้ง!"
+    login-successfully: "&7 login Successfully"
+    not-set: "&7 &r &fคำสั่ง /antihack <รหัสผ่านในดิส>"
+    dont-permission: "&7 คุณไม่มีสิทธ์ เข้าถึงคำสั่ง"
+    successfully-setadmin: "&7 เซ็ตแอดมินเรียบร้อย"
+    input-admin: "&7 ใส่ตำแหน่งของแอดมิน 1-3"

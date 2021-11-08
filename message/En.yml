@@ -1,0 +1,7 @@
+Messages:
+    wrong-password: "&7 &r &fFailed! Wrong Password, please try again!"
+    login-successfully: "&7 login Successfully"
+    not-set: "&7 &r &fCommand /antihack <password indiscord>"
+    dont-permission: "&7 you dont hace permission"
+    successfully-setadmin: "&7 set admin successfully"
+    input-admin: "&7 input rank amdin"
