@@ -1,19 +1,22 @@
 on load:
     load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
+    load yaml "plugins/antihack/message/Th.yml" as "plugins/antihack/message/Th.yml"
+    load yaml "plugins/antihack/message/En.yml" as "plugins/antihack/message/En.yml"
     wait 2 second
     delete file "plugins/antihack/config.yml"
+    delete file "plugins/antihack/message/En.yml"
+    delete file "plugins/antihack/message/Th.yml"
+    wait 2 second
     message "&4&l(!) Successfully loaded First AntiHack" to console
     wait 2 second
-    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/command.yml" to file "plugins/Skript/scripts\\command.sk"
-    wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
+    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/message/Th.yml" to file "plugins/antihack/message\\Th.yml"
+    download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/message/En.yml" to file "plugins/antihack/message\\En.yml"
     wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/checkupdate.yml" to file "plugins/skript/scripts\\checkupdate.sk"
     wait 5 second
     download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/main.yml" to file "plugins/skript/scripts\\main.sk"
     wait 5 second
-    execute console command "sk reload command"
-    wait 5 second 
     execute console command "sk reload checkupdate"
     wait 5 second
     execute console command "sk reload main"
