@@ -55,14 +55,6 @@ command /antihackupdate:
             wait 2 second
             execute console command "sk reload admin"
 
-command /antihack [<text>]:
-    trigger:
-        if player is "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
-            if arg-1 is "reload":
-                execute console command "sk reload sintrack"
-        else:
-            send "&4&l(!)%{credit}% %{dont-permission}%" to player
-
 #Copyright © by HelllWorld 2021
 #If you want to buy a license, you can contact the link : https://www.facebook.com/gaming/HelloWorldCH
 #Do not modify the content or information or use it for commercial purposes without obtaining a license from the owner.
