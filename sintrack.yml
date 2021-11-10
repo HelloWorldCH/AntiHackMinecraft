@@ -1,4 +1,9 @@
 on load:
+    load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
+    load yaml "plugins/antihack/admin.yml" as "plugins/antihack/admin.yml"
+    load yaml "plugins/antihack/message/Th.yml" as "plugins/antihack/message/Th.yml"
+    load yaml "plugins/antihack/message/En.yml" as "plugins/antihack/message/En.yml"
+    
     if yaml value "language-lang" from "plugins/antihack/config.yml" is "Th":
         set {successfully-setadmin} to yaml value "Messages.successfully-setadmin" from "plugins/antihack/message/Th.yml"
         set {login-successfully} to yaml value "Messages.login-successfully" from "plugins/antihack/message/Th.yml"
@@ -15,10 +20,6 @@ on load:
         set {not-set} to yaml value "Messages.not-set" from "plugins/antihack/message/En.yml" 
 
 every second:
-    load yaml "plugins/antihack/config.yml" as "plugins/antihack/config.yml"
-    load yaml "plugins/antihack/admin.yml" as "plugins/antihack/admin.yml"
-    load yaml "plugins/antihack/message/Th.yml" as "plugins/antihack/message/Th.yml"
-    load yaml "plugins/antihack/message/En.yml" as "plugins/antihack/message/En.yml"
     set {admin-1} to yaml value "admin-list-1" from "plugins/antihack/admin.yml"
     set {admin-2} to yaml value "admin-list-2" from "plugins/antihack/admin.yml"
     set {admin-3} to yaml value "admin-list-3" from "plugins/antihack/admin.yml"
