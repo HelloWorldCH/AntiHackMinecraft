@@ -4,19 +4,32 @@ on load:
     wait 3 second
     message "&4&l(!) Successfully loaded Checkupdate AntiHack&7." to console
 
-every 10 second:
+every 20 second:
     execute console command "antihackupdate"
     if line 5 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-command}%":
-        wait 3 second
-        delete file "plugins/Skript/scripts/command.sk"
-        wait 2 second
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/command.yml" to file "plugins/Skript/scripts\\command.sk"
-        wait 2 second
-        execute console command "sk reload command"
-        wait 2 second
-        delete file "plugins/antihack/config.yml"
-        wait 2 second
-        download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
+        if line 6 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-sintrack}%":
+            wait 3 second
+            delete file "plugins/Skript/scripts/command.sk"
+            wait 2 second
+            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/command.yml" to file "plugins/Skript/scripts\\command.sk"
+            wait 2 second
+            execute console command "sk reload command"
+            wait 2 second
+            delete file "plugins/antihack/config.yml"
+            wait 2 second
+            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
+    if line 5 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-command}%":
+        if line 6 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-sintrack}%":
+            wait 3 second
+            delete file "plugins/Skript/scripts/sintrack.sk"
+            wait 2 second
+            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrack.yml" to file "plugins/Skript/scripts\\sintrack.sk"
+            wait 2 second
+            execute console command "sk reload sintrack"
+            wait 2 second
+            delete file "plugins/antihack/config.yml"
+            wait 2 second
+            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
 
 on unload:
     message "&4&l(!) Successfully unloaded Checkupdate AntiHack" to console
