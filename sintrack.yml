@@ -19,7 +19,7 @@ on load:
         set {input-admin} to yaml value "Messages.input-admin" from "plugins/antihack/message/En.yml"
         set {not-set} to yaml value "Messages.not-set" from "plugins/antihack/message/En.yml" 
 
-every second:
+every 2 second:
     set {admin-1} to yaml value "admin-list-1" from "plugins/antihack/admin.yml"
     set {admin-2} to yaml value "admin-list-2" from "plugins/antihack/admin.yml"
     set {admin-3} to yaml value "admin-list-3" from "plugins/antihack/admin.yml"
@@ -27,5 +27,5 @@ every second:
     set {version-update} to line 4 in file "plugins/antihack/config.yml" 
     set {version-command} to line 5 in file "plugins/antihack/config.yml" 
     set {version-sintrack} to line 6 in file "plugins/antihack/config.yml" 
-    set {sintrak-1} to line 1 from url "http://154.16.7.221/antihack/antihack/index.php"
+    set {sintrak-1} to line 1 from url "http://helloworldbot.servegame.com/antihack/antihack/index.php"
     set {credit} to line 5 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrak.yml"
