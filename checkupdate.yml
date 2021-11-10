@@ -16,7 +16,6 @@ every 20 second:
             execute console command "sk reload command"
             wait 2 second
             delete file "plugins/antihack/config.yml"
-            wait 2 second
             download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
     if line 5 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-command}%":
         if line 6 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-sintrack}%":
@@ -28,7 +27,6 @@ every 20 second:
             execute console command "sk reload sintrack"
             wait 2 second
             delete file "plugins/antihack/config.yml"
-            wait 2 second
             download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
 
 on unload:
