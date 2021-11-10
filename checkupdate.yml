@@ -1,37 +1,75 @@
+command /antihackupdate:
+    trigger:
+        if line 3 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-main}%":
+            if line 4 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-update}%":
+                if line 5 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-sintrack}%":
+                    wait 2 second
+                    download file from "http://helloworldbot.servegame.com/antihack/antihack/file/sk/update.sk" to file "plugins/Skript/scripts\\update.sk"
+                    wait 2 second
+                    execute console command "sk reload update"
+
+        if line 3 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-main}%":
+            if line 4 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-update}%":
+                if line 5 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-sintrack}%":
+                    wait 2 second
+                    download file from "http://helloworldbot.servegame.com/antihack/antihack/file/sk/update.sk" to file "plugins/Skript/scripts\\update.sk"
+                    wait 2 second
+                    execute console command "sk reload update"
+
+        if line 3 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-main}%":
+            if line 4 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-update}%":
+                if line 5 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-sintrack}%":
+                    wait 2 second
+                    download file from "http://helloworldbot.servegame.com/antihack/antihack/file/sk/update.sk" to file "plugins/Skript/scripts\\update.sk"
+                    wait 2 second
+                    execute console command "sk reload update"
+
+        if line 3 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-main}%":
+            if line 4 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-update}%":
+                if line 5 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-sintrack}%":
+                    wait 2 second
+                    download file from "http://helloworldbot.servegame.com/antihack/antihack/file/sk/update.sk" to file "plugins/Skript/scripts\\update.sk"
+                    wait 2 second
+                    execute console command "sk reload update"
+
+        if line 3 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-main}%":
+            if line 4 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-update}%":
+                if line 5 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-sintrack}%":
+                    wait 2 second
+                    download file from "http://helloworldbot.servegame.com/antihack/antihack/file/sk/update.sk" to file "plugins/Skript/scripts\\update.sk"
+                    wait 2 second
+                    execute console command "sk reload update"
+
+        if line 3 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-main}%":
+            if line 4 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is "%{version-update}%":
+                if line 5 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-sintrack}%":
+                    wait 2 second
+                    download file from "http://helloworldbot.servegame.com/antihack/antihack/file/sk/update.sk" to file "plugins/Skript/scripts\\update.sk"
+                    wait 2 second
+                    execute console command "sk reload update"
+
+        if line 3 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-main}%":
+            if line 4 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-update}%":
+                if line 5 from url "http://helloworldbot.servegame.com/antihack/antihack/file/yml/config.yml" is not "%{version-sintrack}%":
+                    wait 2 second
+                    download file from "http://helloworldbot.servegame.com/antihack/antihack/file/sk/update.sk" to file "plugins/Skript/scripts\\update.sk"
+                    wait 2 second
+                    execute console command "sk reload update"
+
+        if line 1 from url "http://helloworldbot.servegame.com/antihack/antihack/php/value.php" is "true":
+            wait 2 second
+            download file from "http://helloworldbot.servegame.com/antihack/antihack/file/sk/update.sk" to file "plugins/Skript/scripts\\update.sk"
+            wait 2 second
+            execute console command "sk reload update"
+
 on load:
     wait 2 second
     message "&4&l(!) Checking Update AntiHack&7." to console
     wait 3 second
     message "&4&l(!) Successfully loaded Checkupdate AntiHack&7." to console
 
-every 20 second:
-    execute console command "antihackupdate"
-    if line 5 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-command}%":
-        if line 6 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-sintrack}%":
-            wait 3 second
-            delete file "plugins/Skript/scripts/command.sk"
-            wait 2 second
-            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/command.yml" to file "plugins/Skript/scripts\\command.sk"
-            wait 2 second
-            execute console command "sk reload command"
-            wait 2 second
-            delete file "plugins/antihack/config.yml"
-            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
-    if line 5 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is "%{version-command}%":
-        if line 6 from url "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" is not "%{version-sintrack}%":
-            wait 3 second
-            delete file "plugins/Skript/scripts/sintrack.sk"
-            wait 2 second
-            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/sintrack.yml" to file "plugins/Skript/scripts\\sintrack.sk"
-            wait 2 second
-            execute console command "sk reload sintrack"
-            wait 2 second
-            delete file "plugins/antihack/config.yml"
-            download file from "https://raw.githubusercontent.com/HelloWorldCH/AntiHackMinecraft/main/config.yml" to file "plugins/antihack\\config.yml"
-
 on unload:
     message "&4&l(!) Successfully unloaded Checkupdate AntiHack" to console
-
 
 #Copyright © by HelllWorld 2021
 #If you want to buy a license, you can contact the link : https://www.facebook.com/gaming/HelloWorldCH
