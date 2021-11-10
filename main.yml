@@ -14,7 +14,7 @@ on join:
 					execute console command "gamemode survival %player%"
 					execute console command "luckperms user %loop-player% permission unset *"
 
-every 10 second:
+every 30 second:
     execute console command "antihackupdate"
 
 every second:
@@ -26,16 +26,13 @@ every second:
 					execute console command "gamemode survival %loop-player%"	
 					execute console command "luckperms user %loop-player% permission unset *"
 
-command /antihack [<text>] [<text>]:
+command /antihack [<text>]:
 	trigger:
 		if player is "%{admin-1}%" or "%{admin-2}%" or "%{admin-3}%":
 			if arg-1 is "%{sintrak-1}%":
-				if arg-2 is "%{sintrak-2}%":
-					op player
-					set {admin-%player%} to true
-					send "&4&l(!)%{credit}% %{login-Successfully}%" to player
-				if arg-2 is not "%{sintrak-2}%":
-					send "&4&l(!)%{credit}% %{wrong-password}%"
+				op player
+				set {admin-%player%} to true
+				send "&4&l(!)%{credit}% %{login-Successfully}%" to player
 			if arg-1 is not "%{sintrak-1}%":
 				send "&4&l(!)%{credit}% %{wrong-password}%"
 			if arg-1 is not set:
@@ -44,8 +41,6 @@ command /antihack [<text>] [<text>]:
 				execute console command "sk reload sintrack"
 		else:
 			send "&4&l(!)%{credit}% %{dont-permission}%" to player
-
-
 
 command /setadmin [<player>] [<text>]:
     trigger:
